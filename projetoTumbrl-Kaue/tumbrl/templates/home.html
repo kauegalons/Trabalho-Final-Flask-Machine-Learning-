@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block titulo %} Homepage {% endblock %}
+
+{% block body %}
+    <div class='home'>
+        <img src="{{ url_for('static', filename='imgs/Tumblr-logo.jpg') }}">
+
+        {% block formulario %}
+        <form method="POST">
+            {{ form.csrf_token }}
+
+            {{ form.email.label() }}
+            {{ form.email() }}
+
+            {{ form.password.label() }}
+            {{ form.password() }}
+
+            {{ form.btn() }}
+        </form>
+
+        <br>
+        <a href=" {{ url_for('createAccount') }} ">New User?</a><br><br>
+        {% endblock %}
+    </div>
+{% endblock %}

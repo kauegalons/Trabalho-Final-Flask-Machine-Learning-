@@ -1,0 +1,10 @@
+{% include 'base.html' %}
+
+<nav>
+    <!-- MODO PODRE -->
+
+    <!-- MODO VOCE ACERTOU -->
+    <a href="{{ url_for('homepage') }}">Home</a>
+    <a href="{{ url_for('profile', user_id=user.id ) }}">Profile</a> <br>
+
+</nav>

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block body %}
+<nav>
+    <a href="{{ url_for('homepage') }}">Home</a>
+</nav>
+
+<form method="POST" class='register-form'>
+    <div class='register-div'>
+        {{ form.csrf_token }}
+
+        {{ form.email.label() }}
+        {{ form.email() }}
+
+        {{ form.usarname.label() }}
+        {{ form.usarname() }}
+
+        {{ form.password.label() }}
+        {{ form.password() }}
+
+        {{ form.checkPassword.label() }}
+        {{ form.checkPassword() }}
+    </div>
+    {{ form.btn() }}
+</form>
+{% endblock %}
